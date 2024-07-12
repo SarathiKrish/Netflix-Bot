@@ -11,11 +11,11 @@ Very Sempil Bot Auto Filter bot
 
 #### Deploy in your VPS
 ````bash
-git clone https://github.com/DKBOTx/private-bot
-cd  private-bot
+git clone https://github.com/4kcinemas/Netflix-Bot
+cd  Netflix-Bot
 pip3 install -r requirements.txt
 # <Create config.py appropriately>
-python3 main.py
+python3 bot.py
 ````
 
 Help: Admin mods
