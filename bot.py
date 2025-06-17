@@ -1,5 +1,6 @@
 import logging
 import logging.config
+import ntplib
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -13,6 +14,7 @@ from database.ia_filterdb import Media
 from database.users_chats_db import db
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR
 from utils import temp
+from time import time
 
 class Bot(Client):
 
@@ -44,6 +46,20 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         logging.info("Bot stopped. Bye.")
+
+    async def check_time_drift():
+    try:
+        c = ntplib.NTPClient()
+        response = c.request('pool.ntp.org', version=3)
+        offset = response.tx_time - time()
+        if abs(offset) > 10:
+            raise Exception(f"System time is off by {offset:.2f} seconds. Telegram may reject messages.")
+        print("System time is accurate.")
+    except Exception as e:
+        print(f"Time sync issue: {e}")
+
+check_time_drift()
+
 
 
 app = Bot()
