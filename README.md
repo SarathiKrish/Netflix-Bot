@@ -11,7 +11,7 @@ Very Sempil Bot Auto Filter bot
 
 #### Deploy in your VPS
 ````bash
-git clone https://github.com/4kcinemas/Netflix-Bot
+git clone https://github.com/SarathiKrish/Netflix-Bot
 cd  Netflix-Bot
 pip3 install -r requirements.txt
 # <Create config.py appropriately>
