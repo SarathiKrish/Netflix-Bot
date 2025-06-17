@@ -15,7 +15,7 @@ git clone https://github.com/SarathiKrish/Netflix-Bot
 cd  Netflix-Bot
 pip3 install -r requirements.txt
 # <Create config.py appropriately>
-python3 bot.py
+python bot.py
 ````
 
 Help: Admin mods
