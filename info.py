@@ -12,9 +12,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ['API_ID', '11762352'])
-API_HASH = environ['API_HASH', '2903597c04eb4a6d799ff8ffc87d4aac']
-BOT_TOKEN = environ['BOT_TOKEN', '5222423549:AAFpbj40J4lgKgdbGbUl76HqUvFgtScA9DE']
+API_ID = int(environ.get('API_ID', '11762352'))
+API_HASH = environ.get('API_HASH', '2903597c04eb4a6d799ff8ffc87d4aac')
+BOT_TOKEN = environ.get('BOT_TOKEN', '8030593145:AAFJsJAoazVY3QyKN9lF7W55246aJ6Eo5vo')
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -33,9 +33,9 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Sarathi:1234@cluster0.1xspo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Netflix")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Sarathi:Sarathi123@cluster0.t4zm3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = environ.get('DATABASE_NAME', "netflixautofilterbot")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'files')
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001576358755'))
@@ -45,8 +45,18 @@ IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")), False)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", None)
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "〓〓〓 <b><a href='{url}'>{title}</a></b> 
-〓〓〓\n\n⭐ ɪᴍᴅʙ {rating} |⏰ ʀᴜɴ {runtime} ᴍɪɴ | 📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : {release_date}\n\n𒊹︎︎︎ <code>{genres}</code>\n𒊹︎︎︎ <code>{languages}</code>\n\n⌚️ Yᴇᴀʀ : {year}\n❗ Cᴏᴜɴᴛʀɪᴇs : {countries}\n\n🥳 Powered By @Netflix_Movies_Group")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", """〓〓〓 <b><a href='{url}'>{title}</a></b> 
+〓〓〓
+
+⭐ ɪᴍᴅʙ {rating} |⏰ ʀᴜɴ {runtime} ᴍɪɴ | 📆 ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ : {release_date}
+
+𒊹︎︎︎ <code>{genres}</code>
+𒊹︎︎︎ <code>{languages}</code>
+
+⌚️ Yᴇᴀʀ : {year}
+❗ Cᴏᴜɴᴛʀɪᴇs : {countries}
+
+🥳 Powered By @Netflix_Movies_Group""")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
